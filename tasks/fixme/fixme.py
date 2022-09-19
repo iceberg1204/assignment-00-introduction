@@ -6,10 +6,12 @@
 Разрешается, но не требуется менять код *любым образом*, в том числе менять сам алгоритм решения.
 """
 
-a, b, c = map(int, input.split)
+'''a, b, c = map(int, input.split)
 if a >= b >= c or a <= b <= c:
     write(b)
 if b >= a >= c or b <= a <= c:
     write(a)
 else:
-    write(c)
+    write(c)'''
+
+print(sorted(list(map(int, input().split())))[1])
