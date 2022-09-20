@@ -8,12 +8,17 @@
 
 Можно считать, что передаваемые в функцию b и d всегда ненулевые.
 """
+from math import gcd
+
+
+def least_common_multiple(a, b):
+    lcm = abs(a * b) // gcd(a, b)
+
+    return lcm
 
 
 def add_fractions(a, b, c, d):
-    """
-    Функция сложения дробей a/b и c/d
-    Должна возвращать числитель и знаменатель дроби-результата
-    """
-    return Ellipsis # Напишите тело функции и правильный return
+    y = least_common_multiple(b, d)
+    x = (a * (y // b)) + (c * (y // d))
 
+    return x // gcd(x, y), y // gcd(x, y)
